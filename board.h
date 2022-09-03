@@ -14,17 +14,21 @@ typedef struct Board {
     // All pieces remain on the black squares for
     // the entirety of the game. Both players should
     // start the game with their pieces taking all of
-    // the black squares in the first two rows of
-    // their side of the board, with a white square in
+    // the white squares in the first three rows of
+    // their side of the board, with a red square in
     // the bottom right position of their side.
 
-    // First byte represents rows
-    // Second byte represents columns
-    unsigned short black_positions;
-    unsigned short white_positions;
+    // Red pieces will start out on rows a through c,
+    // while black pieces will start out on rows f 
+    // through h
+
+    // First byte: row a --> last byte: row h
+    // First bit: column 1 --> last bit: column 8
+    unsigned long black_positions;
+    unsigned long white_positions;
 
 } Board;
 
-bool has_piece(const Board* b, char* position);
+bool has_piece(const Board* b, char position[]);
 
 #endif
