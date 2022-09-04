@@ -40,6 +40,6 @@ bool is_valid_move(const Piece* p, char position[]) {
     //     return false;
     // }
 
-    return 1;
+    return true;
 
 };

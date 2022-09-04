@@ -22,13 +22,13 @@ typedef struct Board {
     // while black pieces will start out on rows f 
     // through h
 
-    // First byte: row a --> last byte: row h
-    // First bit: column 1 --> last bit: column 8
-    unsigned long black_positions;
-    unsigned long white_positions;
+    // First byte: row h --> last byte: row a
+    // For each byte: First bit: column 1 --> last bit: column 8
+    char matrix[8][8];
 
 } Board;
 
-bool has_piece(const Board* b, char position[]);
+bool has_piece(const Board* b, bool color, char position[]);
+void print_board(const Board* b);
 
 #endif
